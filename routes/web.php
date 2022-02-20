@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+define('PAGINATION_COUNT',10);
 
 Route::get('/', function () {
     return view('auth.login');
