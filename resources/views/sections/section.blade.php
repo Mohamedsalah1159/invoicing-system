@@ -104,7 +104,7 @@ Sections
 						</div>
 					</div>
 					<!--/div-->
-							<!-- Basic modal -->
+		<!-- Basic modal -->
 		<div class="modal" id="modaldemo8">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content modal-content-demo">

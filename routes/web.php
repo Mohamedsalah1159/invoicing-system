@@ -27,6 +27,8 @@ Route::get('/{page}', 'App\Http\Controllers\AdminController@index');
 Route::group(['prefix'=> 'bill', 'namespace'=>'App\Http\Controllers'], function(){
     Route::resource('bill', 'BillController');
     Route::resource('sections', 'SectionController');
+    Route::resource('products', 'ProductController');
+
 
 });
 

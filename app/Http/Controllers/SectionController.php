@@ -45,7 +45,7 @@ class SectionController extends Controller
             Section::create([
                 'section_name' => $request->section_name,
                 'descreption' => $request->description,
-                'created_by' => (Auth::check()?user()->name : '')
+                'created_by' => (Auth::user())
 
             ]);
             session()->flash('Add', 'This Section is added succesfully');
