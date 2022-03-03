@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Traits\GenralTraits;
 use Validator;
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 
 
@@ -50,6 +52,14 @@ class AuthController extends Controller
             ['password' => bcrypt($request->password)]
         ));
         return $this->returnSuccess(201, 'User successfully registered', 'user', $user);
+
+    }
+    public function userProfile(){
+        return $this->returnData(200, 'profile of '. auth()->user()->name , 'user' , auth()->user());
+    }
+    public function logout(){
+        auth()->logout();
+        return $this->returnSuccess(200, 'User successfully loged out');
 
     }
 }

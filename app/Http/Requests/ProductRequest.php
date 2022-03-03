@@ -3,9 +3,13 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Traits\GenralTraits;
+
 
 class ProductRequest extends FormRequest
 {
+    use GenralTraits;
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,7 +29,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'Product_name' => 'required|unique:products|max:100',
-            'section_id'=> 'required'
+            'section_id'=> 'required',
         ];
     }
     public function messages(){
@@ -36,4 +40,6 @@ class ProductRequest extends FormRequest
             'section_id.required'=> 'You Must Choose one of them'
         ];
     }
+
+
 }

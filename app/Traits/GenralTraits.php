@@ -13,13 +13,14 @@ trait GenralTraits
             
         ]);
     }
-    public function returnSuccess($status="200", $msg=''){
+    public function returnSuccess($status="200", $msg='', $key = null, $data= null){
         return response()->json([
             'status' => $status,
             'message' => $msg,
+            $key => $data
         ]);
     }
-    public function returnData($status="200", $msg='', $value){
+    public function returnData($status="200", $msg='',$key=null ,$value=null){
         return response()->json([
             'status' => $status,
             'message' => $msg,

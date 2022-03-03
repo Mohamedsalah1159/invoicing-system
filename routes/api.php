@@ -17,5 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace'=>'App\Http\Controllers\Api'], function() {
     Route::post('login', 'AuthController@login');
     Route::post('register', 'AuthController@register');
-
+});
+Route::group(['namespace'=>'App\Http\Controllers\Api', 'middleware' => 'auth:api'], function() {
+    Route::get('profile', 'AuthController@userProfile');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('create-section', 'SectionControllerApi@create');
+    Route::post('update-section/{id}', 'SectionControllerApi@update');
+    Route::post('create-product', 'productControllerApi@create');
+    Route::post('delete-section/{id}', 'SectionControllerApi@destroy');
 });
