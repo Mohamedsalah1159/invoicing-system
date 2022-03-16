@@ -16,8 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $sections = Section::all();
-        $products = Product::select('*');
+        $sections = Section::select('id', 'section_name')->get();
+        $products = Product::paginate(10);
         return view('products.product', compact('sections', 'products'));
     }
 

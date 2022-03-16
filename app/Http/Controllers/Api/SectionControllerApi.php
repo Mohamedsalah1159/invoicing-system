@@ -65,6 +65,16 @@ class SectionControllerApi extends Controller
             return $this->returnError(422, 'sorry this is an error');
         }
     }
+    public function all(){
+        try{
+            $sections = Section::select('id', 'section_name')->get();
+            return $this->returnSuccess(200, 'This is all sections', 'data', $sections);
+
+        }catch(\Exception $ex){
+            return $this->returnError(422, 'sorry this is an error');
+        }
+        
+    }
     public function destroy($id){
         try{
             $sections= Section::find($id);

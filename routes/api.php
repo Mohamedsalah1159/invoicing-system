@@ -24,5 +24,6 @@ Route::group(['namespace'=>'App\Http\Controllers\Api', 'middleware' => 'auth:api
     Route::post('create-section', 'SectionControllerApi@create');
     Route::post('update-section/{id}', 'SectionControllerApi@update');
     Route::post('create-product', 'productControllerApi@create');
+    Route::get('allSections', 'SectionControllerApi@all');
     Route::post('delete-section/{id}', 'SectionControllerApi@destroy');
 });
